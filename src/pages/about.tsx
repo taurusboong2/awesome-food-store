@@ -4,11 +4,11 @@ const Home = () => {
   return (
     <>
       <HeadPageMeta
-        title='taurusboong2-awesome food store'
-        description='pupleIO coding test'
+        title='About This Project'
+        description='Description of this project '
         noFollow
       />
-      main page
+      어바웃 페이지
     </>
   );
 };
