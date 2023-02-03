@@ -1,19 +1,21 @@
-import { useEffect } from 'react';
-
-import { fetchStoreDetail, fetchStores } from '@/apis/stores';
+import { useFetchStores, useFetchStoreDetail } from '../hooks/store.hook';
 
 const Home = () => {
-  useEffect(() => {
-    (async () => {
-      const stores = await fetchStores();
-      console.log(`stores:`, stores);
-    })();
+  const {
+    items: StoreItems,
+    isLoading: storesLoading,
+    isError: storesError,
+  } = useFetchStores();
 
-    (async () => {
-      const detailItem = await fetchStoreDetail(2);
-      console.log(`detailItem:`, detailItem);
-    })();
-  }, []);
+  const {
+    items: StoreDetailItems,
+    isLoading: storeDetailLoading,
+    isError: storeDetailError,
+  } = useFetchStoreDetail(1);
+
+  console.log(StoreItems);
+  console.log('===========');
+  console.log(StoreDetailItems);
 
   return <>main</>;
 };
