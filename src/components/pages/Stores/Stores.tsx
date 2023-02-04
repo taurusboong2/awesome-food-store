@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { useFetchStoreDetail, useFetchStores } from '@/hooks/store.hook';
 import Section from '@/components/templates/Section';
-import { Box, Card, Modal } from '@/components/commons';
+import { Box, Card, LoadingSpinner, Modal } from '@/components/commons';
 
 const Stores = () => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const Stores = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const { items: storesList } = useFetchStores();
+  const { items: storesList, isLoading } = useFetchStores();
 
   const { items: storeDetail, isLoading: isDetailLoading } =
     useFetchStoreDetail(id);
@@ -33,6 +33,14 @@ const Stores = () => {
     });
   }
 
+  if (isLoading)
+    return (
+      <>
+        <Box center>
+          <LoadingSpinner size={100} />
+        </Box>
+      </>
+    );
   return (
     <>
       <Section title='스토어 리스트' maxWidth='800px'>

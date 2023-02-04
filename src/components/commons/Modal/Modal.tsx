@@ -6,7 +6,6 @@ import { Box, LoadingSpinner } from '..';
 import { StoresItem } from '@/types/stores';
 
 interface Props {
-  title?: string;
   open?: boolean;
   onCancel?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onOk?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -14,7 +13,6 @@ interface Props {
   isLoading?: boolean;
 }
 const Modal: React.FC<Props> = ({
-  title,
   open,
   onCancel,
   onOk,
@@ -27,7 +25,7 @@ const Modal: React.FC<Props> = ({
 
   return (
     <AntdModal
-      title={title}
+      title='맛집 상세보기'
       okText='확인'
       open={open}
       onCancel={onCancel}
