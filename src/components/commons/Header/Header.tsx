@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 60px;
   background-color: #eee;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 
   h1 {
     font-size: 1.65rem;
