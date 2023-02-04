@@ -62,7 +62,7 @@ export const useFetchStoreDetail = (id: number) => {
         }
       })();
     }
-  }, []);
+  }, [id]);
 
   return {
     items,

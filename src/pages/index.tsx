@@ -1,4 +1,8 @@
+import dynamic from 'next/dynamic';
+
 import { HeadPageMeta } from '@/components/commons';
+
+const MainStores = dynamic(() => import('@/components/pages/Stores'));
 
 const Home = () => {
   return (
@@ -8,7 +12,8 @@ const Home = () => {
         description='pupleIO coding test'
         noFollow
       />
-      main page
+
+      <MainStores />
     </>
   );
 };
