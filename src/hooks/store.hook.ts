@@ -43,7 +43,7 @@ export const useFetchStoreDetail = (id: number) => {
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!isLoading) {
+    if (id && !isLoading) {
       (async () => {
         try {
           setIsLoading(true);
