@@ -13,12 +13,11 @@ const Card: React.FC<Props> = ({ id, image, name }) => {
   return (
     <Box
       key={id}
-      width='25%'
       paddingBottom='20px'
       alignItems='center'
       justifyContent='center'
     >
-      <AntdCard hoverable bordered={false}>
+      <AntdCard hoverable>
         <CardImage src={image} alt={`${name} image`} />
       </AntdCard>
     </Box>
