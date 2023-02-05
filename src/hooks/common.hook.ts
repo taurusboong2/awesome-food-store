@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export const useNotFoundRedirect = (delay: number) => {
   const router = useRouter();
