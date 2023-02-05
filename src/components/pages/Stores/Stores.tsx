@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { useFetchStoreDetail, useFetchStores } from '@/hooks/store.hook';
-import Section from '@/components/templates/Section';
+import { Section } from '@/components/templates';
 import { Box, Card, LoadingSpinner, Modal } from '@/components/commons';
 
 const Stores = () => {
@@ -52,7 +52,6 @@ const Stores = () => {
           ))}
         </Box>
         <Modal
-          title={storeDetail?.name}
           open={showModal}
           onCancel={handleCancleModal}
           onOk={handleCancleModal}
