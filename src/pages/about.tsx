@@ -1,4 +1,8 @@
+import dynamic from 'next/dynamic';
+
 import { HeadPageMeta } from '@/components/commons';
+
+const AboutPage = dynamic(() => import('@/components/pages/About'));
 
 const Home = () => {
   return (
@@ -8,7 +12,8 @@ const Home = () => {
         description='Description of this project '
         noFollow
       />
-      어바웃 페이지
+
+      <AboutPage />
     </>
   );
 };
